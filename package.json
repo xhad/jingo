@@ -41,7 +41,7 @@
     "cookie-parser": "^1.3.3",
     "cookie-session": "^1.1.0",
     "cors": "^2.7.1",
-    "ecstatic": "0.4.x",
+    "ecstatic": "1.4.0",
     "express": "^4.10.6",
     "express-flash": "0.0.2",
     "express-session": "^1.9.3",
@@ -59,9 +59,10 @@
     "passport-github": "^0.1.5",
     "passport-google-oauth": "^0.1.5",
     "passport-local": "^1.0.0",
-    "semver": "^2.3.2",
+    "semver": "^4.3.2",
     "serve-favicon": "^2.1.7",
-    "transliteration": "^0.1.1"
+    "transliteration": "^0.1.1",
+    "snyk": "^1.42.6"
   },
   "devDependencies": {
     "chai": "*",
@@ -72,11 +73,14 @@
   "scripts": {
     "test": "mocha test/spec",
     "start": "./jingo -c config.yaml",
-    "start-dev": "nodemon ./jingo -c config.yaml"
+    "start-dev": "nodemon ./jingo -c config.yaml",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=0.8",
     "npm": ">=1.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
