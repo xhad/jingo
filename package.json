@@ -61,7 +61,8 @@
     "passport-local": "^1.0.0",
     "semver": "^2.3.2",
     "serve-favicon": "^2.1.7",
-    "transliteration": "^0.1.1"
+    "transliteration": "^0.1.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "*",
@@ -72,11 +73,14 @@
   "scripts": {
     "test": "mocha test/spec",
     "start": "./jingo -c config.yaml",
-    "start-dev": "nodemon ./jingo -c config.yaml"
+    "start-dev": "nodemon ./jingo -c config.yaml",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": ">=0.8",
     "npm": ">=1.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
